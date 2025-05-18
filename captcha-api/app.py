@@ -13,3 +13,7 @@ def solve():
     image = Image.open(file.stream)
     text = pytesseract.image_to_string(image)
     return jsonify({"text": text.strip()})
+
+@app.route("/")
+def index():
+    return {"status": "ok", "message": "CAPTCHA solver API. Use /solve"}, 200
