@@ -2,3 +2,4 @@ Flask
 pillow
 pytesseract
 gunicorn
+flask-cors
