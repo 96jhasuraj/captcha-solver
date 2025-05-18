@@ -4,7 +4,7 @@ async function solveCaptcha() {
   const formData = new FormData();
   formData.append("file", file);
 
-  const response = await fetch("https://YOUR_BACKEND_URL_HERE/solve", {
+  const response = await fetch("https://captcha-solver-xzm2.onrender.com/solve", {
     method: "POST",
     body: formData,
   });
