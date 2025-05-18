@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from PIL import Image
 import pytesseract
 
 app = Flask(__name__)
+CORS(app)  # Allow cross-origin requests
 
 @app.route("/solve", methods=["POST"])
 def solve():
@@ -13,6 +15,10 @@ def solve():
     image = Image.open(file.stream)
     text = pytesseract.image_to_string(image)
     return jsonify({"text": text.strip()})
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
 
 @app.route("/")
 def index():

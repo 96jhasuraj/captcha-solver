@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CAPTCHA Solver</title>
 </head>
 <body>
-  <h1>CAPTCHA Solver</h1>
-  <input type="file" id="captchaInput" accept="image/*" />
-  <button onclick="solveCaptcha()">Solve CAPTCHA</button>
-  <p id="result"></p>
+  <h1>Solve CAPTCHA</h1>
+  <form id="captcha-form">
+    <input type="file" id="image-input" accept="image/*" required />
+    <button type="submit">Solve CAPTCHA</button>
+  </form>
+  <div id="result" style="margin-top: 20px; font-weight: bold;"></div>
 
   <script src="script.js"></script>
 </body>
